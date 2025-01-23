@@ -1,5 +1,6 @@
 package clients.cashier;
 
+
 import catalogue.Basket;
 import middle.MiddleFactory;
 import middle.OrderProcessing;
@@ -74,11 +75,13 @@ public class CashierView implements Observer
     theBtBuy.setBounds( 16, 25+60*1, 80, 40 );      // Buy button 
     theBtBuy.addActionListener(                     // Call back code
       e -> cont.doBuy() );
+    	SoundPlayer.playSound("D:\\eclipse\\CI553-CW-miniStore\\sounds/click.mp3");
     cp.add( theBtBuy );                             //  Add to canvas
 
     theBtBought.setBounds( 16, 25+60*3, 80, 40 );   // Bought Button
     theBtBought.addActionListener(                  // Call back code
       e -> cont.doBought() );
+    SoundPlayer.playSound("D:\\eclipse\\CI553-CW-miniStore\\sounds/buy.wav");
     cp.add( theBtBought );                          //  Add to canvas
 
     theAction.setBounds( 110, 25 , 270, 20 );       // Message area
